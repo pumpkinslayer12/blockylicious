@@ -1,0 +1,93 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockylicious/curvy",
+	"version": "0.1.0",
+	"title": "Curvy",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Curvy shape divder to make text more interesting",
+	"example": {},
+	"supports": {
+		"html": false,
+		"color": {
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		}
+	},
+	"attributes": {
+		"topWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"topHeight": {
+			"type": "number",
+			"default": 100
+		},
+		"enableTopCurve": {
+			"type": "boolean",
+			"default": true
+		},
+		"topFlipX": {
+			"type": "boolean",
+			"default": false
+		},
+		"topFlipY": {
+			"type": "boolean",
+			"default": false
+		},
+		"topColor": {
+			"type": "string",
+			"default": "#FFF"
+		},
+		"bottomWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"bottomHeight": {
+			"type": "number",
+			"default": 100
+		},
+		"enableBottomCurve": {
+			"type": "boolean",
+			"default": true
+		},
+		"bottomFlipX": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomFlipY": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomColor": {
+			"type": "string",
+			"default": "#FFF"
+		},
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#ec4899"
+				},
+				"spacing": {
+					"padding": {
+						"top": "80px",
+						"bottom": "80px",
+						"left": "50px",
+						"right": "50px"
+					}
+				}
+			}
+		}
+	},
+	"textdomain": "blockylicious",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
