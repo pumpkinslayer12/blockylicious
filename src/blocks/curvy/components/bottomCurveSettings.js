@@ -1,27 +1,11 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-
 import {
-    ColorPalette
-} from '@wordpress/block-editor';
-import {
-    ToggleControl,
     HorizontalRule,
-    RangeControl
-} from '@wordpress/components';
-
-import metadata from '../block.json';
+    RangeControl,
+    ToggleControl,
+} from "@wordpress/components";
+import { ColorPalette } from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
+import metadata from "../block.json";
 
 export const BottomCurveSettings = (props) => {
     return (
@@ -33,9 +17,8 @@ export const BottomCurveSettings = (props) => {
                 value={props.attributes.bottomWidth || 100}
                 onChange={(newValue) => {
                     props.setAttributes({
-                        bottomWidth: parseInt(newValue)
+                        bottomWidth: parseInt(newValue),
                     });
-
                 }}
                 label={__("Width", metadata.textdomain)}
             />
@@ -45,9 +28,8 @@ export const BottomCurveSettings = (props) => {
                 value={props.attributes.bottomHeight}
                 onChange={(newValue) => {
                     props.setAttributes({
-                        bottomHeight: parseInt(newValue)
+                        bottomHeight: parseInt(newValue),
                     });
-
                 }}
                 label={__("Height", metadata.textdomain)}
             />
@@ -55,28 +37,24 @@ export const BottomCurveSettings = (props) => {
             <div style={{ display: "flex" }}>
                 <ToggleControl
                     onChange={(isChecked) => {
-                        props.setAttributes({ bottomFlipX: isChecked })
+                        props.setAttributes({
+                            bottomFlipX: isChecked,
+                        });
                     }}
-
-                    checked={props.attributes.bottomFlipX}>
-
-                </ToggleControl>
-                <span>
-                    {__("Flip Horizontally", metadata.textdomain)}
-                </span>
+                    checked={props.attributes.bottomFlipX}
+                />
+                <span>{__("Flip horizontally", metadata.textdomain)}</span>
             </div>
             <div style={{ display: "flex" }}>
                 <ToggleControl
                     onChange={(isChecked) => {
-                        props.setAttributes({ bottomFlipY: isChecked })
+                        props.setAttributes({
+                            bottomFlipY: isChecked,
+                        });
                     }}
-
-                    checked={props.attributes.bottomFlipY}>
-
-                </ToggleControl>
-                <span>
-                    {__("Flip Vertically", metadata.textdomain)}
-                </span>
+                    checked={props.attributes.bottomFlipY}
+                />
+                <span>{__("Flip vertically", metadata.textdomain)}</span>
             </div>
             <HorizontalRule />
             <div>
@@ -84,14 +62,12 @@ export const BottomCurveSettings = (props) => {
                 <ColorPalette
                     value={props.attributes.bottomColor}
                     onChange={(newValue) => {
-                        props.setAttributes(
-                            {
-                                bottomColor: newValue,
-                            }
-                        );
+                        props.setAttributes({
+                            bottomColor: newValue,
+                        });
                     }}
                 />
             </div>
         </>
-    )
-}
+    );
+};

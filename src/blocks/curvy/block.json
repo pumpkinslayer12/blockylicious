@@ -4,10 +4,9 @@
 	"name": "blockylicious/curvy",
 	"version": "0.1.0",
 	"title": "Curvy",
-	"category": "widgets",
+	"category": "blockylicious",
 	"icon": "smiley",
 	"description": "Curvy shape divder to make text more interesting",
-	"example": {},
 	"supports": {
 		"html": false,
 		"color": {
@@ -18,6 +17,22 @@
 			"padding": true,
 			"margin": true
 		}
+	},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "core/heading",
+				"attributes": {
+					"content": "Curvy Heading"
+				}
+			},
+			{
+				"name": "core/paragraph",
+				"attributes": {
+					"content": "This is an example curvy block"
+				}
+			}
+		]
 	},
 	"attributes": {
 		"topWidth": {
