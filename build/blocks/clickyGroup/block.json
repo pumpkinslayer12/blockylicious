@@ -8,10 +8,23 @@
   "icon": "smiley",
   "description": "A group of Clicky buttons that link to a post type.",
   "supports": {
-    "html": false
+    "html": false,
+    "spacing": {
+      "blockGap": true
+    }
   },
   "example": {},
-  "attributes": {},
+  "attributes": {
+    "justifyContent": {
+      "type": "string",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ],
+      "default": "left"
+    }
+  },
   "textdomain": "blockylicious",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",

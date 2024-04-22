@@ -15,12 +15,8 @@ import {
 	useBlockProps,
 	InspectorControls,
 	InnerBlocks,
-	useInnerBlocksProps,
-	BlockControls,
-	JustifyContentControl
+	RichText
 } from '@wordpress/block-editor';
-import "./editor.scss";
-import { parseValue } from '../utils/parseValue';
 import {
 	PanelBody,
 	ToggleControl,
@@ -44,32 +40,23 @@ import './editor.scss';
  */
 
 export default function Edit(props) {
-	const blockGap = parseValue(props.attributes.style?.spacing?.blockGap || "");
-	const blockProps = useBlockProps({
-		style: {
-			gap: blockGap,
-			justifyContent: props.attributes.justifyContent
-		},
-	});
-	const InnerBlocksProps = useInnerBlocksProps(blockProps, {
-		allowedBlocks: ["blockylicious/clicky-button"],
-		template: [["blockylicious/clicky-button", {}]],
-	});
+	const blockProps = useBlockProps()
 	return (
-		<>
-			<BlockControls>
-				<JustifyContentControl
-					allowedControls={["left", "center", "right"]}
-					value={props.attributes.justifyContent}
-					onChange={(newValue) => {
-						props.setAttributes({
-							justifyContent: newValue,
-						})
-					}}
-				/>
-			</BlockControls>
-			<div {...InnerBlocksProps} />
+		<div {...blockProps}>
 
-		</>
+			<RichText
+				placeholder='Label Text'
+				value={props.attributes.labelText}
+				allowedFormats={[]}
+				multiline={false}
+				onChange={(newValue) => {
+					props.setAttributes({
+						labelText: newValue,
+					})
+				}}
+				onSplit={() => { }}
+				onReplace={() => { }}
+			/>
+		</div>
 	)
 }
