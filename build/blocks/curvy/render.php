@@ -1,4 +1,8 @@
 <?
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 $block_wrapper_attributes = get_block_wrapper_attributes([
     'class' => 'alignfull'
 ]);

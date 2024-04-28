@@ -5,4 +5,13 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-blockylicious-clicky-button {}
+.wp-block-blockylicious-clicky-button {
+    padding: 15px 15px 15px 15px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

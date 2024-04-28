@@ -14,6 +14,8 @@
  * @package           create-block
  */
 
+namespace BlockyliciousBlockBundle;
+
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
@@ -42,9 +44,27 @@ function create_custom_block_category($categories)
 
 function create_block_blockylicious_block_init()
 {
-	add_filter('block_categories_all', 'create_custom_block_category');
+	add_filter('block_categories_all', 'BlockyliciousBlockBundle\create_custom_block_category');
 	register_block_type(__DIR__ . '/build/blocks/curvy');
 	register_block_type(__DIR__ . '/build/blocks/clickyGroup');
 	register_block_type(__DIR__ . '/build/blocks/clickyButton');
 }
-add_action('init', 'create_block_blockylicious_block_init');
+add_action('init', 'BlockyliciousBlockBundle\create_block_blockylicious_block_init');
+
+function convert_custom_properties($value)
+{
+	$prefix = 'var:';
+	$prefix_len = strlen($prefix);
+	$token_in = '|';
+	$token_out = '--';
+	if (str_starts_with($value, $prefix)) {
+		$unwrapped_name = str_replace(
+			$token_in,
+			$token_out,
+			substr($value, $prefix_len)
+		);
+		$value = "var(--wp--$unwrapped_name)";
+	}
+
+	return $value;
+}
