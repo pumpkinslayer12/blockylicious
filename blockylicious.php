@@ -48,6 +48,13 @@ function create_block_blockylicious_block_init()
 	register_block_type(__DIR__ . '/build/blocks/curvy');
 	register_block_type(__DIR__ . '/build/blocks/clickyGroup');
 	register_block_type(__DIR__ . '/build/blocks/clickyButton');
+	register_block_type(__DIR__ . '/build/blocks/piccyGallery');
+	register_block_type(__DIR__ . '/build/blocks/piccyImage');
+
+	add_action('enqueue_block_assets', function () {
+		wp_enqueue_style("dashicons");
+	});
+
 }
 add_action('init', 'BlockyliciousBlockBundle\create_block_blockylicious_block_init');
 

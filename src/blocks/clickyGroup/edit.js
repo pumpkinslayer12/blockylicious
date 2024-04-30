@@ -20,7 +20,7 @@ import {
 	JustifyContentControl
 } from '@wordpress/block-editor';
 import "./editor.scss";
-import { parseValue } from '../utils/parseValue';
+import { parseValue } from '../../utils/parseValue';
 import {
 	PanelBody,
 	ToggleControl,

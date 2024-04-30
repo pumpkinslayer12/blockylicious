@@ -1,0 +1,44 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-blockylicious-piccy-gallery {
+    .gallery-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+    }
+
+    .image-preview {
+        width: 100%;
+    }
+
+    .thumb {
+        width: 100%;
+        border-radius: 12px;
+        border: 5px solid transparent;
+        cursor: pointer;
+        display: block;
+        filter: brightness(0.5);
+        transition: 0.2s ease all;
+        transform: scale(1);
+        box-sizing: border-box;
+        height: 75px;
+        object-fit: cover;
+
+        &:hover {
+            filter: brightness(1);
+        }
+
+        &.selected {
+            border: 5px solid #006dff;
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+    }
+
+
+}
